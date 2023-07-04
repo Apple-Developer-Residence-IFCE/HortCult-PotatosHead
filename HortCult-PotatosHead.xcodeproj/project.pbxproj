@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FB1BDB42A54AB6C002091D6 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0FB1BDB32A54AB6C002091D6 /* .swiftlint.yml */; };
 		130AB5462A2942D4003B3006 /* HortaTipo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130AB5452A2942D4003B3006 /* HortaTipo.swift */; };
 		130AB54A2A29456E003B3006 /* HortaInformationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130AB5492A29456E003B3006 /* HortaInformationScreen.swift */; };
 		130AB54C2A2947D8003B3006 /* FrequenciaRega.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130AB54B2A2947D8003B3006 /* FrequenciaRega.swift */; };
@@ -80,6 +81,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0FB1BDB32A54AB6C002091D6 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		130AB5452A2942D4003B3006 /* HortaTipo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HortaTipo.swift; sourceTree = "<group>"; };
 		130AB5492A29456E003B3006 /* HortaInformationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HortaInformationScreen.swift; sourceTree = "<group>"; };
 		130AB54B2A2947D8003B3006 /* FrequenciaRega.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequenciaRega.swift; sourceTree = "<group>"; };
@@ -391,6 +393,7 @@
 		64B207852A1D7DFE00F440EF = {
 			isa = PBXGroup;
 			children = (
+				0FB1BDB32A54AB6C002091D6 /* .swiftlint.yml */,
 				64B207902A1D7DFE00F440EF /* HortCult-PotatosHead */,
 				64B2078F2A1D7DFE00F440EF /* Products */,
 			);
@@ -501,6 +504,7 @@
 				64B2078A2A1D7DFE00F440EF /* Sources */,
 				64B2078B2A1D7DFE00F440EF /* Frameworks */,
 				64B2078C2A1D7DFE00F440EF /* Resources */,
+				0FB1BDB22A54AB20002091D6 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -549,6 +553,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FB1BDB42A54AB6C002091D6 /* .swiftlint.yml in Resources */,
 				641D71CB2A26A98B0040CBCC /* Satoshi-Bold.otf in Resources */,
 				641D71CD2A26A9940040CBCC /* Satoshi-BoldItalic.otf in Resources */,
 				641D71C92A26A9810040CBCC /* Satoshi-BlackItalic.otf in Resources */,
@@ -565,6 +570,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0FB1BDB22A54AB20002091D6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		64B2078A2A1D7DFE00F440EF /* Sources */ = {
